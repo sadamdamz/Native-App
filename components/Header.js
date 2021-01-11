@@ -15,7 +15,7 @@ const iPhoneX = () =>
 const BellButton = ({ isWhite, style, navigation }) => (
   <TouchableOpacity
     style={[styles.button, style]}
-    onPress={() => navigation.navigate('Pro')}
+    onPress={() => navigation.navigate('Construction')}
   >
     <Icon
       family="NowExtra"
@@ -28,7 +28,7 @@ const BellButton = ({ isWhite, style, navigation }) => (
 );
 
 const BasketButton = ({ isWhite, style, navigation }) => (
-  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
+  <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Construction')}>
     <Icon
       family="NowExtra"
       size={16}
@@ -81,26 +81,6 @@ class Header extends React.Component {
         return [
           <BellButton key="chat-profile" navigation={navigation} isWhite={white} />,
           <BasketButton key="basket-deals" navigation={navigation} isWhite={white} />
-        ];
-      case 'Account':
-        return [
-          <BellButton key="chat-profile" navigation={navigation} />,
-          <BasketButton key="basket-deals" navigation={navigation} />
-        ];
-      case 'Product':
-        return [
-          <BellButton key="chat-profile" navigation={navigation} isWhite={white} />,
-          <BasketButton key="basket-product" navigation={navigation} isWhite={white} />
-        ];
-      case 'Search':
-        return [
-          <BellButton key="chat-search" navigation={navigation} isWhite={white} />,
-          <BasketButton key="basket-search" navigation={navigation} isWhite={white} />
-        ];
-      case 'Settings':
-        return [
-          <BellButton key="chat-search" navigation={navigation} isWhite={white} />,
-          <BasketButton key="basket-search" navigation={navigation} isWhite={white} />
         ];
       default:
         break;
