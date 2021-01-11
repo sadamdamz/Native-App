@@ -33,10 +33,10 @@ class Register extends React.Component {
     const { navigation } = this.props
     this.setState({loading:true})
     setTimeout(
-      () => navigation.navigate("Home"), 
+      () => {navigation.navigate("Home"); this.setState({loading:false})}, 
       2000
     );
-    console.log(fields)
+    console.log(this.state.fields)
   }
 
   handleChange = (e,name) => {
