@@ -11,7 +11,7 @@ class ArInput extends React.Component {
 
   handleText = (e,name) => {
     // console.log(e);
-    this.props.onChangeText(e,name)
+    this.props.onChangeText(e,this.props.name)
   }
 
   render() {

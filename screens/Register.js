@@ -19,28 +19,34 @@ const DismissKeyboard = ({ children }) => (
 );
 
 class Register extends React.Component {
+
   constructor(props){
     super(props);
     this.state = {
-      fields: {}
+      fields: {},
+      loading:false,
     }
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit = () => {
-    console.log(this.state.fields)
+    const { navigation } = this.props
+    this.setState({loading:true})
+    setTimeout(
+      () => navigation.navigate("Home"), 
+      2000
+    );
+    console.log(fields)
   }
 
   handleChange = (e,name) => {
-    console.log(e,name)
-    // let field = this.state.fields;
-    // const { target } = e;
-    // const { value, name } = target;
-    // field[name] = value;
-    // this.setState({field});
+    let field = this.state.fields;
+    field[name] = e;
+    this.setState({field});
   }
 
   render() {
+    const { loading } = this.state;
     return (
       <DismissKeyboard>
         <Block flex middle>
@@ -132,8 +138,7 @@ class Register extends React.Component {
                                   style={styles.inputIcons}
                                 />
                               }
-                              onChangeText={this.handleChange}
-                              name="firstName"
+                              onChangeText={(e)=>this.handleChange(e,"firstName")}
                             />
                           </Block>
                           <Block width={width * 0.8} style={{ marginBottom: 5 }}>
@@ -149,8 +154,7 @@ class Register extends React.Component {
                                   style={styles.inputIcons}
                                 />
                               }
-                              onChangeText={()=>this.handleChange}
-                              name="lastName"
+                              onChangeText={(e)=>this.handleChange(e,"lastName")}
                             />
                           </Block>
                           <Block width={width * 0.8}>
@@ -166,7 +170,7 @@ class Register extends React.Component {
                                   style={styles.inputIcons}
                                 />
                               }
-                              onChangeText={()=>this.handleChange}
+                              onChangeText={(e)=>this.handleChange(e,"email")}
                               name="email"
                             />
                           </Block>
@@ -191,7 +195,7 @@ class Register extends React.Component {
                           </Block>
                         </Block>
                         <Block center>
-                          <Button color="primary" round style={styles.createButton} onPress={this.handleSubmit}>
+                          <Button color="primary" round style={styles.createButton} onPress={this.handleSubmit} loading={loading}>
                             <Text
                               style={{ fontFamily: 'montserrat-bold' }}
                               size={14}

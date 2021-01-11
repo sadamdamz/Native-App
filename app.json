@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Now UI React Native",
+    "name": "Article Dashboard React Native",
     "slug": "now-ui-react-native",
     "privacy": "public",
     "sdkVersion": "39.0.0",
@@ -25,6 +25,6 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "Now UI React Native, based on Now UI Design System. Coded by Creative Tim"
+    "description": "Developed By Sadam Dev"
   }
 }

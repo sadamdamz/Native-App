@@ -1,6 +1,5 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-//galio
 import { Block, Text, theme } from 'galio-framework';
 
 import { articles, nowTheme } from '../constants/';
@@ -11,7 +10,7 @@ class Articles extends React.Component {
     return (
       <Block style={styles.container}>
       <Text size={16} style={styles.title}>
-        Cards
+        Recent
       </Text>
         <Card item={articles[0]} horizontal />
         <Block flex row>
