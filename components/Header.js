@@ -87,7 +87,12 @@ class Header extends React.Component {
     }
   };
   renderSearch = () => {
+
+    const handleText = (e) => {
+      console.log(e)
+    }
     const { navigation } = this.props;
+    
     return (
       <Input
         right
@@ -95,9 +100,11 @@ class Header extends React.Component {
         style={styles.search}
         placeholder="What are you looking for?"
         placeholderTextColor={'#8898AA'}
-        onFocus={() => {Keyboard.dismiss(); navigation.navigate('Pro')}}
+        name="search"
+        // onFocus={() => {Keyboard.dismiss(); navigation.navigate('Pro')}}
+        onChangeText={(e)=>handleText(e,"search")}
         iconContent={
-          <Icon size={16} color={theme.COLORS.MUTED} name="zoom-bold2x" family="NowExtra" />
+          <Icon size={16} color={theme.COLORS.MUTED} name="zoom-bold2x" family="NowExtra"/>
         }
       />
     );

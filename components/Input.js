@@ -9,9 +9,9 @@ import { nowTheme } from "../constants";
 
 class ArInput extends React.Component {
 
-  handleText = (e,name) => {
+  handleText = (e) => {
     // console.log(e);
-    this.props.onChangeText(e,this.props.name)
+    this.props.onChangeText(e)
   }
 
   render() {
